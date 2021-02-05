@@ -1,3 +1,10 @@
+---
+layout: page
+title: DevOps
+permalink: /devops/
+---
+
+
 # Deploy Quarkus Cafe 5.0 Using a helm chart
 ![Lint and Test Charts](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-helm/workflows/Lint%20and%20Test%20Charts/badge.svg)
 ![Release Charts](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-helm/workflows/Release%20Charts/badge.svg)

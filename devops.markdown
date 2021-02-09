@@ -5,5 +5,5 @@ permalink: /devops/
 ---
 
 ## Helm Chart Deployment
-[Helm Chart Deployment]({% post_url helmchart %})
+[Helm Chart Deployment]({{ site.baseurl }}{% link _posts/helmchart.markdown %})
 

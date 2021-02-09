@@ -5,5 +5,4 @@ permalink: /devops/
 ---
 
 ## Helm Chart Deployment
-[Link Text]({% post_url 2021-02-02-welcome-to-jekyll %})
-[Link Text2]({% post_url helmchart %})
+* [A Jekyll post_url link]({% post_url 2021-02-09-link-test %})

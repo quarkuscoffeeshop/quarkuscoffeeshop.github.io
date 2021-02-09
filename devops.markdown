@@ -5,4 +5,4 @@ permalink: /devops/
 ---
 
 ## Helm Chart Deployment
-* [A Jekyll post_url link]({% post_url 2021-02-09-link-test %})
+* [Hel Chart Deployment for QuarkusCoffeeShop v5.0]({% post_url 2021-02-09-helmchart %})

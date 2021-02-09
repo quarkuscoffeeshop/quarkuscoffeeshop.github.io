@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Helm Chart Deployment
-permalink: /helm/
+title:  "quarkuscoffeeshop Helm Deployment"
+date:   2021-02-09 08:59:35 -0500
+categories: helm deployment
 ---
-
 
 # Deploy Quarkus Cafe 5.0 Using a helm chart
 ![Lint and Test Charts](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-helm/workflows/Lint%20and%20Test%20Charts/badge.svg)

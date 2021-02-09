@@ -161,13 +161,13 @@ helm install quarkuscoffeeshop/quarkuscoffeeshop-charts --generate-name --values
 
 The Helm chart does not currently expose the routes for our Web UI or the Customermocker service.  You will need to log in and expose them using oc:
 
-```shell 
+``` 
 oc expose svc/quarkuscoffeeshop-web
 oc expose svc/quarkuscoffeeshop-customermocker
 ```
 
 **Uninstall quarkus application**
-```shell
+```
 helm uninstall quarkus-cafe-deployment
 ```
 
@@ -201,7 +201,7 @@ helm install  quarkuscoffeeshop-deployment  quarkuscoffeeshop-charts/ --values q
 
 *The Helm chart does not currently expose the routes for our Web UI or the Customermocker service.  You will need to log in and expose them using oc:*
 
-```shell script
+```
 oc expose svc/quarkuscoffeeshop-web
 oc expose svc/quarkuscoffeeshop-customermocker
 ```

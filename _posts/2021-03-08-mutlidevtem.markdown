@@ -72,26 +72,26 @@ YAML
 **Update project for Dev Teams**  
 `For devteam1`
 ```
- sed -i 's/quarkuscoffeeshop-demo/quarkuscoffeeshop-devteam1-gitops/g' values.yaml
- cat values.yaml | grep quarkuscoffeeshop-devteam1-gitops
- ansible-playbook -i inventory.yaml --tags=install  main.yml
- ansible-playbook -i inventory.yaml --tags=createdb main.yml -vv
+$ sed -i 's/quarkuscoffeeshop-demo/quarkuscoffeeshop-devteam1-gitops/g' values.yaml
+$ cat values.yaml | grep quarkuscoffeeshop-devteam1-gitops
+$ ansible-playbook -i inventory.yaml --tags=install  main.yml
+$ ansible-playbook -i inventory.yaml --tags=createdb main.yml -vv
 ```
 
 `For devteam2`
 ```
- sed -i 's/quarkuscoffeeshop-devteam1-gitops/quarkuscoffeeshop-devteam2-gitops/g' values.yaml
-   cat values.yaml | grep quarkuscoffeeshop-devteam2-gitops
- ansible-playbook -i inventory.yaml --tags=install  main.yml
- ansible-playbook -i inventory.yaml --tags=createdb main.yml -vv
+$ sed -i 's/quarkuscoffeeshop-devteam1-gitops/quarkuscoffeeshop-devteam2-gitops/g' values.yaml
+$ cat values.yaml | grep quarkuscoffeeshop-devteam2-gitops
+$ ansible-playbook -i inventory.yaml --tags=install  main.yml
+$ ansible-playbook -i inventory.yaml --tags=createdb main.yml -vv
 ```
 
 `For devteam3`
 ```
- sed -i 's/quarkuscoffeeshop-devteam2-gitops/quarkuscoffeeshop-devteam3-gitops/g' values.yaml
-   cat values.yaml | grep quarkuscoffeeshop-devteam3-gitops
- ansible-playbook -i inventory.yaml --tags=install  main.yml
- ansible-playbook -i inventory.yaml --tags=createdb main.yml -vv
+$ sed -i 's/quarkuscoffeeshop-devteam2-gitops/quarkuscoffeeshop-devteam3-gitops/g' values.yaml
+$ cat values.yaml | grep quarkuscoffeeshop-devteam3-gitops
+$ ansible-playbook -i inventory.yaml --tags=install  main.yml
+$ ansible-playbook -i inventory.yaml --tags=createdb main.yml -vv
 ```
 
 *The password is saved under `cat /tmp/postgres-info.txt`*. 

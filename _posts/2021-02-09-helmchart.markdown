@@ -22,20 +22,7 @@ $ ./get_helm.sh
 
 ### OpenShiftt 4.x  Deployment Instructions 
 
-**Login to OpenShift and create project**
-```
-oc new-project <<NAMESPACE>
-```
-
 ### Install Postgres Operator
-**switch to root user**
-```
-sudo su - root
-```
-**cd into temp directory**
-```
-cd /tmp
-```
 
 **git clone postgres-operator**
 ```
@@ -100,6 +87,7 @@ For more Postgress deployment Options see [postgres-operator](https://github.com
 ### Run ansible playbook to install Red Hat AMQ and Configure Postgres on target cluster
 ```
 $ curl -OL https://raw.githubusercontent.com/quarkuscoffeeshop/quarkuscoffeeshop-ansible/master/files/deploy-quarkuscoffeeshop-ansible.sh
+$ chmod +x deploy-quarkuscoffeeshop-ansible.sh
 $ ./deploy-quarkuscoffeeshop-ansible.sh [OPTION]
  Options:
   -d      Add domain 

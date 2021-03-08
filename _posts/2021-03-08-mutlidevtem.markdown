@@ -113,7 +113,7 @@ $ ./deploy-quarkuscoffeeshop-ansible.sh  -d ocp4.example.com -o sha-123456789 -p
 ```
 
 ### Follow the Instructions configure the deploymnents for teams
-* https://github.com/quarkuscoffeeshop/acm-multi-tenancy
+* [https://github.com/quarkuscoffeeshop/acm-multi-tenancy](https://github.com/quarkuscoffeeshop/acm-multi-tenancy)
 
 ### Follow the Instructions for each dev team
-* https://github.com/quarkuscoffeeshop/acm-multi-tenancy-dev-team
+* [https://github.com/quarkuscoffeeshop/acm-multi-tenancy-dev-team](https://github.com/quarkuscoffeeshop/acm-multi-tenancy-dev-team)

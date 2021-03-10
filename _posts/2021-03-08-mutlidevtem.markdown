@@ -108,7 +108,7 @@ $  sed -i 's/quarkuscoffeeshop-demo/quarkuscoffeeshop-devteam1-gitops/g' deploy-
 $ ./deploy-quarkuscoffeeshop-ansible.sh  -d ocp4.example.com -o sha-123456789 -p 123456789 -s DEVTEAM1
 $  sed -i  's/quarkuscoffeeshop-devteam1-gitops/quarkuscoffeeshop-devteam2-gitops/g' deploy-quarkuscoffeeshop-ansible.sh
 $ ./deploy-quarkuscoffeeshop-ansible.sh  -d ocp4.example.com -o sha-123456789 -p 123456789 -s DEVTEAM2
-$  sed -i  's/quarkuscoffeeshop-devteam1-gitops/quarkuscoffeeshop-devteam2-gitops/g' deploy-quarkuscoffeeshop-ansible.sh
+$  sed -i  's/quarkuscoffeeshop-devteam2-gitops/quarkuscoffeeshop-devteam3-gitops/g' deploy-quarkuscoffeeshop-ansible.sh
 $ ./deploy-quarkuscoffeeshop-ansible.sh  -d ocp4.example.com -o sha-123456789 -p 123456789 -s DEVTEAM3
 ```
 

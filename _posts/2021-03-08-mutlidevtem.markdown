@@ -78,7 +78,7 @@ $ ansible-playbook -i inventory.yaml --tags=install  main.yml
 $ ansible-playbook -i inventory.yaml --tags=createdb main.yml -vv
 ```
 
-`For devteam2`
+`For devteam2`  
 ```
 $ sed -i 's/quarkuscoffeeshop-devteam1-gitops/quarkuscoffeeshop-devteam2-gitops/g' values.yaml
 $ cat values.yaml | grep quarkuscoffeeshop-devteam2-gitops
@@ -94,6 +94,15 @@ $ ansible-playbook -i inventory.yaml --tags=install  main.yml
 $ ansible-playbook -i inventory.yaml --tags=createdb main.yml -vv
 ```
 
+*Note: if the database deployment fails for devteam2 and devteam3 run the following below*  
+*TO-DO: fix in script*  
+```
+$ ansible-playbook -i inventory.yaml --tags=uninstall  main.yml
+$ rm -rf ~/.pgo/quarkuscoffeeshop-devteam#-gitops/
+$ ansible-playbook -i inventory.yaml --tags=install  main.yml
+$ ansible-playbook -i inventory.yaml --tags=createdb main.yml -vv
+```
+
 *The password is saved under `cat /tmp/postgres-info.txt`*. 
 *The password will also be found in the `TASK [pgo-operator : Configure Database cluster]` output*. 
 
@@ -105,11 +114,11 @@ For more Postgress deployment Options see [postgres-operator](https://github.com
 $ curl -OL https://raw.githubusercontent.com/quarkuscoffeeshop/quarkuscoffeeshop-ansible/master/files/deploy-quarkuscoffeeshop-ansible.sh
 $ chmod +x deploy-quarkuscoffeeshop-ansible.sh
 $  sed -i 's/quarkuscoffeeshop-demo/quarkuscoffeeshop-devteam1-gitops/g' deploy-quarkuscoffeeshop-ansible.sh
-$ ./deploy-quarkuscoffeeshop-ansible.sh  -d ocp4.example.com -o sha-123456789 -p 123456789 -s DEVTEAM1
+$ ./deploy-quarkuscoffeeshop-ansible.sh  -d ocp4.example.com -o sha-123456789 -p '123456789' -s DEVTEAM1
 $  sed -i  's/quarkuscoffeeshop-devteam1-gitops/quarkuscoffeeshop-devteam2-gitops/g' deploy-quarkuscoffeeshop-ansible.sh
-$ ./deploy-quarkuscoffeeshop-ansible.sh  -d ocp4.example.com -o sha-123456789 -p 123456789 -s DEVTEAM2
+$ ./deploy-quarkuscoffeeshop-ansible.sh  -d ocp4.example.com -o sha-123456789 -p '123456789' -s DEVTEAM2
 $  sed -i  's/quarkuscoffeeshop-devteam2-gitops/quarkuscoffeeshop-devteam3-gitops/g' deploy-quarkuscoffeeshop-ansible.sh
-$ ./deploy-quarkuscoffeeshop-ansible.sh  -d ocp4.example.com -o sha-123456789 -p 123456789 -s DEVTEAM3
+$ ./deploy-quarkuscoffeeshop-ansible.sh  -d ocp4.example.com -o sha-123456789 -p '123456789' -s DEVTEAM3
 ```
 
 ### Follow the Instructions configure the deploymnents for teams

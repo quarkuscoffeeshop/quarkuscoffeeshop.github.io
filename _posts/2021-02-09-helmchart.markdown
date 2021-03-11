@@ -41,7 +41,7 @@ $ cat >inventory.yaml<<YAML
         localhost:
     vars:
         ansible_connection: local
-        config_path: "{{ playbook_dir }}/values.yaml"
+        config_path: "./values.yaml"
         # ==================
         # Installation Methods
         # One of the following blocks must be updated:

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: DevOps
-permalink: /devops/
+permalink: /management/
 ---
 
 ## Helm Chart Deployment

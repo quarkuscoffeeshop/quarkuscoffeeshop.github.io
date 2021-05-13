@@ -3,6 +3,7 @@ layout: page
 title: Management
 permalink: /management/
 ---
+
 # Quarkus Cafe on ACM using kustomize
 * [Quarkus Cafe on ACM using kustomize]({% post_url 2021-05-13-acm-using-kustomize.markdown %})
 

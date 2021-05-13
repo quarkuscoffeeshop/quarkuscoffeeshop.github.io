@@ -2,7 +2,7 @@
 layout: post
 title:  "Quarkuscoffeeshop ACM deployment for multiple dev teams"
 date:   2021-03-08 09:50:00 -0500
-categories: helm deployment
+categories: management
 ---
 
 # Deploy QuarkusCoffeeShop v5.0 Using a helm chart

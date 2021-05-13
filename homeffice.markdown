@@ -7,8 +7,11 @@ permalink: /homeoffice/
 # homeoffice-backend project
 * [homeoffice-backend project]({% post_url 2021-05-13-homeoffice-backend  %})
 
-# homeoffice-backend project
+# quarkuscoffeeshop-homeoffice-ui project
 * [quarkuscoffeeshop-homeoffice-ui]({% post_url 2021-05-13-quarkuscoffeeshop-homeoffice-ui %})
+
+# homeoffice-ingress project
+* [homeoffice-ingress]({% post_url 2021-05-13-homeoffice-ingress %})
 
 # homeoffice-backend tekton pipeline
 * [homeoffice-backend tekton pipeline](https://github.com/quarkuscoffeeshop/tekton-pipelines/blob/master/homeoffice-backend/README.md)

@@ -24,21 +24,21 @@ And one optional dependency:
 ## Quarkus Coffeeshop Core Microservice
 * [Quarkus Coffeeshop Core Microservice]({% post_url 2021-05-13-counter %})
 
-## quarkus-cafe-web
-[quarkus-cafe-web]({% post_url 2021-05-13-quarkus-cafe-web %})
+## quarkuscoffeeshop-web
+[quarkuscoffeeshop-web]({% post_url 2021-05-13-quarkuscoffeeshop-web %})
 > This service hosts the web front end and is the initial entry point for all orders. Orders are sent to a Kafka topic, where they are picked up by the Counter service
 This services listens to another Kafka topic for updates and streams updates to the html page with server sent events
 
 
-## quarkus-cafe-barista project
-* [quarkus-cafe-barista]({% post_url 2021-05-13-quarkus-cafe-barista %})
+## quarkuscoffeeshop-barista project
+* [quarkuscoffeeshop-barista]({% post_url 2021-05-13-quarkuscoffeeshop-barista %})
 
 
 ## Kitchen Microservice
 * [Kitchen Microservice]({% post_url 2021-05-13-quarkuscoffeeshop-kitchen %})
 
 ## quarkus-coffesshop-inventory project
-* [quarkus-coffesshop-inventory]({% post_url 2021-05-13-quarkus-coffesshop-inventory %})
+* [quarkuscoffeeshop-inventory]({% post_url 2021-05-13-quarkuscoffeeshop-inventory %})
 
 ## quarkuscoffeeshop-customermocker project
 * [quarkuscoffeeshop-customermocker]({% post_url 2021-05-13-quarkuscoffeeshop-customermocker %})
@@ -48,4 +48,5 @@ This services listens to another Kafka topic for updates and streams updates to 
 
 
 ## Quarkuscoffeeshop Support
-* [quarkus-coffesshop-inventory](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support)
+* [Quarkuscoffeeshop Support](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support)
+>This repo contains support files for local development

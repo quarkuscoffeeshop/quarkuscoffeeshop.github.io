@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Management
+title: Cluster Management (GitOps)
 permalink: /management/
 ---
 

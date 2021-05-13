@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Cluster Management (GitOps)
-permalink: /management/
+title: DevOps
+permalink: /devops/
 ---
 
 ## Helm Chart Deployment

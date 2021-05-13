@@ -22,7 +22,7 @@ And one optional dependency:
 * **Testutils** - which contains optional classes that make testing easier
 
 ## Quarkus Coffeeshop Core Microservice
-* [Quarkus Coffeeshop Core Microservice]({% post_url 2021-05-13-counter %})
+* [Quarkus Coffeeshop Core Microservice]({% post_url 2021-05-13-quarkuscoffeeshop-counter %})
 
 ## quarkuscoffeeshop-web
 [quarkuscoffeeshop-web]({% post_url 2021-05-13-quarkuscoffeeshop-web %})

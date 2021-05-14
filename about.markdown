@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-![My helpful screenshot](_images_/webpage-example.png)
+![Quarkus Coffee Shop](https://raw.githubusercontent.com/quarkuscoffeeshop/quarkuscoffeeshop-ansible/master/images/webpage-example.png)
 
 ## Quarkus Coffee Shop
 ---

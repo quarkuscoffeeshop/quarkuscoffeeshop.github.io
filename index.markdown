@@ -24,6 +24,8 @@ title: Home
 <li>Kitchen</li>
 <li>Inventory</li>
 </ul>
+</p>
+<p>Supporting files including a docker-compose file are in the quarkuscoffeeshop-support project</p>
 <h2>Home Office</h2>
 <p>The Home Office consists of three microservices that receive updates from Coffee Shops over Apache Kafka and display data using Red Hat's Patternfly library for ReactJS.<p>
 <p>The microservices are:

@@ -7,19 +7,12 @@ permalink: /coffeeshop/
 The application consists of the following microservices,:
 
 * **Web** - the web front end (no way you saw that coming)
-* **Counter** - coordinates events in the system
-* **Barista** - makes drinks
-* **Kitchen** - makes food
-* **Inventory** - stores and restocks the inventory for the Barista and Kitchen microservices
+* **Counter** - coordinates events in the system - https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-counter
+* **Barista** - makes drinks - https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-barista
+* **Kitchen** - makes food - https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-kitchen
+* **Inventory** - stores and restocks the inventory for the Barista and Kitchen microservices - https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-inventory
 
-The applications have 2 shared dependency:
-
-* **Domain** - which contains the shared domain model
-Shared dependencies are of course a bad idea in a Microservices Architecture so we'll talk about why this exists
-
-And one optional dependency:
-
-* **Testutils** - which contains optional classes that make testing easier
+Supporting files can be found in the quarkuscoffeeshop-support project: https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support 
 
 ## Quarkus Coffeeshop Core Microservice
 >This service orchestrates and persists order related events

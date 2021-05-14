@@ -4,6 +4,8 @@ title: About
 permalink: /about/
 ---
 
+![My helpful screenshot](_images_/webpage-example.png)
+
 ## Quarkus Coffee Shop
 ---
 Quarkus Coffee Shop can be used to demo different Red Hat products and technology. The technologies used are below.

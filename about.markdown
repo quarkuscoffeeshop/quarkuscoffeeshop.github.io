@@ -18,15 +18,21 @@ Quarkus Coffee Shop can be used to demo different Red Hat products and technolog
 * **Red Hat Advanced Cluster Management (ACM)** - [Red Hat® Advanced Cluster Management for Kubernetes](https://www.redhat.com/en/technologies/management/advanced-cluster-management) controls clusters and applications from a single console, with built-in security policies. Extend the value of Red Hat OpenShift® by deploying apps, managing multiple clusters, and enforcing policies across multiple clusters at scale.
 * **Kustomize** - [Kustomize](https://kustomize.io/) traverses a Kubernetes manifest to add, remove or update configuration options without forking. 
 * **Helm** - [Helm](https://helm.sh/) helps you manage Kubernetes applications — Helm Charts help you define, install, and upgrade even the most complex Kubernetes deployments.
-
+* **Ansible** - [Ansible](https://www.ansible.com/) Ansible is an open-source software provisioning, configuration management, and application-deployment tool enabling infrastructure as code. 
+* **Operator Lifecycle Manager (OLM)** -The [Operator Lifecycle Manager (OLM)](https://docs.openshift.com/container-platform/4.7/operators/understanding/olm-what-operators-are.html) helps users install, update, and manage the lifecycle of all Operators and their associated services running across their clusters. 
 
 ## Event Driven Architecture
 ---
 * **Domain Driven Design** - [Domain-driven](https://martinfowler.com/bliki/DomainDrivenDesign.html) design is the concept that the structure and language of software code should match the business domain.
 * **Event Storming** - [Event storming](https://www.eventstorming.com/) is a workshop-based method to quickly find out what is happening in the domain of a software program.
 * **Hexagonal Architecture** - The [hexagonal architecture](https://java-design-patterns.com/patterns/hexagonal/), or ports and adapters architecture, is an architectural pattern used in software design. 
-* **Strategic Domain Driven Design with Context Mapping** - https://www.infoq.com/articles/ddd-contextmapping/
+* **Strategic Domain Driven Design with Context Mapping** - (Strategic Domain Driven Design with Context Mapping)[https://www.infoq.com/articles/ddd-contextmapping/]
 
 ## Demos
 ---
-* 
+* [Deploy Quarkus Coffee Shop to multiple clusters using ACM]({% post_url 2021-05-13-acm-using-kustomize %})
+* [Manage development teams using ACM]({% post_url 2021-03-08-mutlidevtem %})
+* [Manage Cluster Policys using ACM](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-gitops/blob/master/acm-policys.md)
+* [Quarkus Cafe Deployment on ACM using tekton pipelines](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-gitops/blob/master/tekton-demo-deployment.md)
+* [Develop Helm Charts for OpenShift deployment]({% post_url 2021-02-09-helmchart %})
+* [Create deployment Pipelines for microservices using Tekton]({% post_url 2021-05-13-tekton-pipelines %})

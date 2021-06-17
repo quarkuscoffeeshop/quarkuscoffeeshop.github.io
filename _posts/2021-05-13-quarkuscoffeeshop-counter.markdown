@@ -34,3 +34,6 @@ The OrderService orchestrates order activity including persisting orders, sendin
 
 ### [KafkaService](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-counter/blob/master/src/main/java/io/quarkuscoffeeshop/infrastructure/KafkaService.java) 
 The KafkaService listens to the "orders-in" and "orders-up" topics and calls the appropriate methods on the OrderService.
+
+### [OrderTicketDeserializer](), [PlaceOrderCommandDeserializer](), and [TicketUpdateDeserializer]()
+These objects implement Quarkus' ObjectMapperDeserializer so no marshalling to and from JSON is required.  The excellent [Quarkus Guides](https://quarkus.io/guides/kafka#serializing-via-jackson) addresses this approach.

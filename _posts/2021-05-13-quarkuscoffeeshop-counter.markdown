@@ -6,3 +6,4 @@ categories: coffeeshop
 ---
 
 # quarkuscoffeeshop-counter
+

@@ -30,7 +30,7 @@ github_username:  quarkuscoffeeshop
 # Build settings
 theme: minima
 plugins:
-  - jekyll-feed
+  - jekyll-fee
 
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -103,7 +103,18 @@ brew install tektoncd-cli
     http://quarkuscoffeeshop-homeoffice-ui-quarkuscoffeeshop-homeoffice.apps.shop.example.com/graphql
 ```
 
-### update the transformer-patches.yaml foreach microservice
+### update the transformer-patches.yaml for each microservice
 * homeoffice-ingress
+> this is for the postgres password you can find this at the bottom odd the doc
+![20210916162845](https://i.imgur.com/A9OAGla.png)
 * homeoffice-backend
+> this is for the postgres password you can find this at the bottom odd the doc
+![20210916162812](https://i.imgur.com/Ho5jqi9.png)
+
+### update the quarkuscoffeeshop-homeoffice-ui-route.yaml for quarkuscoffeeshop-homeoffice-ui
 * quarkuscoffeeshop-homeoffice-ui
+![20210916163055](https://i.imgur.com/s3fXANW.png)
+
+
+## Postgres password location 
+![20210916163339](https://i.imgur.com/VkG7Siu.png)

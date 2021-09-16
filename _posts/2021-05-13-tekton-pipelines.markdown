@@ -59,6 +59,10 @@ brew install tektoncd-cli
 **homeoffice-backend tekton pipline**  
 [homeoffice-backend](https://github.com/quarkuscoffeeshop/tekton-pipelines/blob/master/homeoffice-backend/README.md)
 
+**homeoffice-ingress tekton pipline**  
+[homeoffice-backend](https://github.com/quarkuscoffeeshop/tekton-pipelines/blob/master/homeoffice-ingress/README.md)
+
+
 ## Store front microservices  
 
 **quarkuscoffeeshop-barista tekton pipline**  

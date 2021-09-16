@@ -54,12 +54,56 @@ brew install tektoncd-cli
 
 ## HOME Office (Backoffice)
 
+### The gogs route is found under the quarkuscoffeeshop-cicd project
 ![20210916160010](https://i.imgur.com/pifxmOG.png)
-
-
 ![20210916160053](https://i.imgur.com/kLFLkP8.png)
 
-
+### Use the the following to login
+* username: `user1`
+* password: `openshift`
 ![20210916160128](https://i.imgur.com/Z4MgSjG.png)
 ![20210916160151](https://i.imgur.com/Ppv0s8d.png)
+
+### Navigate to the `tekton-pipelines` repo
 ![20210916160211](https://i.imgur.com/AfvtjCo.png)
+
+### The quay registry is found under the `quay-enterprise` project
+![20210916160943](https://i.imgur.com/uJskjul.png)
+![20210916161424](https://i.imgur.com/1NisymA.png)
+
+### Create an admin user for the deployment
+* username: `admin`
+* email address: `admin@example.com`
+* password: `admin123`
+![20210916161516](https://i.imgur.com/Iaaa9eU.png)
+![20210916161551](https://i.imgur.com/eZDmbvV.png)
+
+### Create Quarkuscoffeeshop organization for images
+![20210916161629](https://i.imgur.com/vspBsUU.png)
+![20210916161651](https://i.imgur.com/3MyCD3B.png)
+
+
+### update the deploy-pipeline.yaml for the following services  in gogs
+* homeoffice-ingress
+```
+    # Change to internal quay repo
+    - default: quay.io/quarkuscoffeeshop/homeoffice-ingress
+```
+* homeoffice-backend
+```
+    # Change to internal quay repo
+    - default: quay.io/quarkuscoffeeshop/homeoffice-backend
+```
+* quarkuscoffeeshop-homeoffice-ui
+```
+    # Change to internal quay repo
+    - default: quay.io/quarkuscoffeeshop/quarkuscoffeeshop-homeoffice-ui
+    # change to your url 
+    - default: >-
+    http://quarkuscoffeeshop-homeoffice-ui-quarkuscoffeeshop-homeoffice.apps.shop.example.com/graphql
+```
+
+### update the transformer-patches.yaml foreach microservice
+* homeoffice-ingress
+* homeoffice-backend
+* quarkuscoffeeshop-homeoffice-ui

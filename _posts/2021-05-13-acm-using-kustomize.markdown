@@ -26,7 +26,7 @@ $ sudo mv kustomize /usr/local/bin/
 ## Administrator Tasks On Target Cluster (OCP4 ACM Managed)
 
 
-### Run ansible playbook to install AMQ and Postgres on target clusters.
+### Run Ansible playbook to install AMQ and Postgres on target clusters.
 
 #### Install Postgres Operator
 [install-postgres-operator](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-helm/wiki#install-postgres-operator)
@@ -60,6 +60,8 @@ EOF
 $ ./deploy-quarkuscoffeeshop-ansible.sh -d ocp4.example.com -t sha-123456789 -p 123456789 -s ATLANTA
 
 ```
+
+
 
 ## Install ACM Managed and Configure a HUB
 

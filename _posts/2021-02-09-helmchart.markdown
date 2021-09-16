@@ -55,7 +55,6 @@ MONGODB=n
 HELM_DEPLOYMENT=n
 EOF
 $ ./deploy-quarkuscoffeeshop-ansible.sh -d ocp4.example.com -t sha-123456789 -p 123456789 -s ATLANTA
-
 ```
 
 ### To deploy quarkuscoffeeshop using a helm chart

@@ -2,7 +2,7 @@
 layout: post
 title:  "quarkuscoffeeshop Tekton pipelines Guide"
 date:   2021-05-08 12:00:00 -0500
-categories: management
+categories: devops
 ---
 
 # quarkuscoffeeshop Tekton pipelines Guide
@@ -53,23 +53,10 @@ brew install tektoncd-cli
 
 
 ## HOME Office (Backoffice)
-**quarkuscoffeeshop-homeoffice-ui tekton pipline**  
-[quarkuscoffeeshop-homeoffice-ui](https://github.com/quarkuscoffeeshop/tekton-pipelines/blob/master/quarkuscoffeeshop-homeoffice-ui/README.md)
 
-**homeoffice-backend tekton pipline**  
-[homeoffice-backend](https://github.com/quarkuscoffeeshop/tekton-pipelines/blob/master/homeoffice-backend/README.md)
 
-## Store front microservices  
 
-**quarkuscoffeeshop-barista tekton pipline**  
-[quarkuscoffeeshop-barista](https://github.com/quarkuscoffeeshop/tekton-pipelines/blob/master/quarkuscoffeeshop-barista/README.md)
 
-**quarkuscoffeeshop-counter tekton pipline**  
-[quarkuscoffeeshop-counter](https://github.com/quarkuscoffeeshop/tekton-pipelines/blob/master/quarkuscoffeeshop-counter/README.md)
 
-**quarkuscoffeeshop-kitchen tekton pipline**  
-[quarkuscoffeeshop-kitchen](https://github.com/quarkuscoffeeshop/tekton-pipelines/blob/master/quarkuscoffeeshop-kitchen/README.md)
 
-**quarkuscoffeeshop-homeoffice-ui tekton pipline**   
-[quarkuscoffeeshop-web](https://github.com/quarkuscoffeeshop/tekton-pipelines/blob/master/quarkuscoffeeshop-web/README.md)
 

@@ -13,3 +13,6 @@ permalink: /devops/
 
 ## quarkuscoffeeshop Tekton pipelines Guide
 * [quarkuscoffeeshop Tekton pipelines Guide]({% post_url 2021-05-13-tekton-pipelines %})
+
+## Quarkus CoffeeShop Home Office Demo
+* [quarkuscoffeeshop Home office Deployment with tekton pipelines]({% post_url2021-09-16-home-office-deployment.markdown %})

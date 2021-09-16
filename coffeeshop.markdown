@@ -14,9 +14,9 @@ The application consists of the following microservices,:
 
 Supporting files can be found in the quarkuscoffeeshop-support project: https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support 
 
-## Quarkus Coffeeshop Core Microservice
+## [quarkuscoffeeshop-counter](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-counter)
 >This service orchestrates and persists order related events  
-[Quarkus Coffeeshop Core Microservice]({% post_url 2021-05-13-quarkuscoffeeshop-counter %})
+[Quarkus Coffeeshop Counter Microservice]({% post_url 2021-05-13-quarkuscoffeeshop-counter %})
 
 ## quarkuscoffeeshop-web
 > This service hosts the web front end and is the initial entry point for all orders. Orders are sent to a Kafka topic, where they are picked up by the Counter service

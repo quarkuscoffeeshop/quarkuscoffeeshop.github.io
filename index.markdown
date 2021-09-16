@@ -11,6 +11,7 @@ title: Home
 <ul>
 <li>Quarkus Coffeeshop</li>
 <li>Home Office</li>
+<li>Debezium Outbox Pattern</li>
 <li>DevOps</li>
 <li>Hybrid Cloud Management</li>
 </ul>

@@ -5,7 +5,7 @@ date:   2021-05-08 12:00:00 -0500
 categories: devops
 ---
 
-# quarkuscoffeeshop Tekton pipelines Guide
+# quarkuscoffeeshop homeoffice Tekton pipelines Guide
 
 ### Requirements 
 * [Postgres Operator](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-helm/wiki#install-postgres-operator)
@@ -85,16 +85,20 @@ brew install tektoncd-cli
 
 ### update the deploy-pipeline.yaml for the following services  in gogs
 * homeoffice-ingress
+
 ```
     # Change to internal quay repo
     - default: quay.io/quarkuscoffeeshop/homeoffice-ingress
 ```
+
 * homeoffice-backend
+
 ```
     # Change to internal quay repo
     - default: quay.io/quarkuscoffeeshop/homeoffice-backend
 ```
 * quarkuscoffeeshop-homeoffice-ui
+
 ```
     # Change to internal quay repo
     - default: quay.io/quarkuscoffeeshop/quarkuscoffeeshop-homeoffice-ui

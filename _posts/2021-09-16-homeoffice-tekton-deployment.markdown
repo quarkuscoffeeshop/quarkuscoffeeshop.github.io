@@ -54,9 +54,12 @@ brew install tektoncd-cli
 
 ## HOME Office (Backoffice)
 
+![20210916160010](https://i.imgur.com/pifxmOG.png)
 
 
+![20210916160053](https://i.imgur.com/kLFLkP8.png)
 
 
-
-
+![20210916160128](https://i.imgur.com/Z4MgSjG.png)
+![20210916160151](https://i.imgur.com/Ppv0s8d.png)
+![20210916160211](https://i.imgur.com/AfvtjCo.png)

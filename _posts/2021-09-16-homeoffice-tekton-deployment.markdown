@@ -79,6 +79,7 @@ brew install tektoncd-cli
 ![20210916161551](https://i.imgur.com/eZDmbvV.png)
 
 ### Create Quarkuscoffeeshop organization for images
+* Organization Name: `quarkuscoffeeshop`
 ![20210916161629](https://i.imgur.com/vspBsUU.png)
 ![20210916161651](https://i.imgur.com/3MyCD3B.png)
 
@@ -116,7 +117,6 @@ brew install tektoncd-cli
 ![20210916162812](https://i.imgur.com/Ho5jqi9.png)
 
 ### update the quarkuscoffeeshop-homeoffice-ui-route.yaml for quarkuscoffeeshop-homeoffice-ui
-* quarkuscoffeeshop-homeoffice-ui
 ![20210916163055](https://i.imgur.com/s3fXANW.png)
 
 ### To access Argocd
@@ -185,6 +185,20 @@ oc create -f argocd/homeoffice-ingress/homeoffice-ingress.yaml  -n openshift-git
 #### To start the build-and-push-quarkuscoffeeshop-homeoffice-ui pipeline 
 ![20210916165749](https://i.imgur.com/s8AswNF.png)
 ![20210916165816](https://i.imgur.com/pQipUCq.png)
+
+### Deployment Validation 
+#### Validate pipeline completes
+![20210917144852](https://i.imgur.com/zebme7M.png)
+
+#### verify images have been pushed to quay
+![20210917144806](https://i.imgur.com/Zf00MBm.png)
+
+#### Verify deployment is successful 
+![20210917144949](https://i.imgur.com/JVXg7Pe.png)
+
+#### Access to homeoffice ui
+![20210917145049](https://i.imgur.com/3nQNMBy.png)
+![20210917145109](https://i.imgur.com/BDUxRfI.png)
 
 ## Postgres password location 
 ![20210916163339](https://i.imgur.com/VkG7Siu.png)

@@ -94,10 +94,10 @@ brew install tektoncd-cli
 
 ### update the transformer-patches.yaml for each microservice
 * homeoffice-ingress
-> this is for the postgres password you can find this at the bottom odd the doc
+> this is for the postgres password you can find this at the bottom off the doc
 ![20210916162845](https://i.imgur.com/A9OAGla.png)
 * homeoffice-backend
-> this is for the postgres password you can find this at the bottom odd the doc
+> this is for the postgres password you can find this at the bottom off the doc
 ![20210916162812](https://i.imgur.com/Ho5jqi9.png)
 
 ### update the quarkuscoffeeshop-homeoffice-ui-route.yaml for quarkuscoffeeshop-homeoffice-ui
@@ -158,15 +158,15 @@ oc create -f argocd/homeoffice-ingress/homeoffice-ingress.yaml  -n openshift-git
 ### To run pipelines go to the quarkuscoffeeshop-cicd project 
 ![20210916165144](https://i.imgur.com/GUk6oEj.png)
 
-#### To start the build-and-push-homeoffice-backend pipeline 
+**To start the build-and-push-homeoffice-backend pipeline** 
 ![20210916165411](https://i.imgur.com/V5TkeKM.png)
 ![20210916165442](https://i.imgur.com/9yhWTJt.png)
 
-#### To start the build-and-push-homeoffice-ingress pipeline 
+**To start the build-and-push-homeoffice-ingress pipeline** 
 ![20210916165559](https://i.imgur.com/80TKQSQ.png)
 ![20210916165630](https://i.imgur.com/KFYA8cF.png)
 
-#### To start the build-and-push-quarkuscoffeeshop-homeoffice-ui pipeline 
+**To start the build-and-push-quarkuscoffeeshop-homeoffice-ui pipeline**
 ![20210916165749](https://i.imgur.com/s8AswNF.png)
 ![20210916165816](https://i.imgur.com/pQipUCq.png)
 

@@ -5,7 +5,7 @@ date:   2021-09-15 12:00:00 -0500
 categories: devops
 ---
 
-# quarkuscoffeeshop homeoffice Tekton pipelines Guide
+# quarkuscoffeeshop Tekton pipelines Guide
 
 ### Requirements 
 * [Postgres Operator](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-helm/wiki#install-postgres-operator)
@@ -85,8 +85,41 @@ brew install tektoncd-cli
 
 
 ### update the deploy-pipeline.yaml for the following services  in gogs
+**quarkuscoffeeshop-barista tekton pipeline**  
+
+```
+    # Change to internal quay repo
+    - default: quay.io/quarkuscoffeeshop/quarkuscoffeeshop-barista
+```
+
+**quarkuscoffeeshop-counter tekton pipeline**  
+
+```
+    # Change to internal quay repo
+    - default: quay.io/quarkuscoffeeshop/quarkuscoffeeshop-counter
+```
+
+**quarkuscoffeeshop-kitchen tekton pipeline**  
+
+```
+    # Change to internal quay repo
+    - default: quay.io/quarkuscoffeeshop/quarkuscoffeeshop-kitchen
+```
+
+**quarkuscoffeeshop-web tekton pipeline**   
+
+```
+    # Change to internal quay repo
+    - default: quay.io/quarkuscoffeeshop/quarkuscoffeeshop-web
+```
+
 
 ### update the transformer-patches.yaml for each microservice
+* quarkuscoffeeshop-counter
+![20210918121934](https://i.imgur.com/9OHN25l.png)
+* quarkuscoffeeshop-web
+> CHANGEME=quarkuscoffeeshop-web-quarkuscoffeeshop-demo.apps.ocp4.example.com
+![20210918122147](https://i.imgur.com/5MCsWQE.png)
 
 
 ### To access Argocd
@@ -121,7 +154,46 @@ cd tekton-pipelines
 REPO_URL='http://gogs-quarkuscoffeeshop-cicd.apps.ocp4.example.com/user1/tekton-pipelines.git'
 ```
 ### load the argocd application templates for each microservice
+**quarkuscoffeeshop-barista argo application**  
+```
+sed "s|%REPO_NAME%|'${REPO_URL}'|g" argocd/quarkuscoffeeshop-barista/quarkuscoffeeshop-barista-template.yaml  > argocd/quarkuscoffeeshop-barista/quarkuscoffeeshop-barista.yaml
+oc create -f argocd/quarkuscoffeeshop-barista/quarkuscoffeeshop-barista.yaml  -n openshift-gitops
+```
+
+**quarkuscoffeeshop-counter argo application**  
+```
+sed "s|%REPO_NAME%|'${REPO_URL}'|g" argocd/quarkuscoffeeshop-counter/quarkuscoffeeshop-counter-template.yaml  > argocd/quarkuscoffeeshop-counter/quarkuscoffeeshop-counter.yaml
+oc create -f argocd/quarkuscoffeeshop-counter/quarkuscoffeeshop-counter.yaml  -n openshift-gitops
+```
+
+**quarkuscoffeeshop-kitchen argo application**  
+```
+sed "s|%REPO_NAME%|'${REPO_URL}'|g" argocd/quarkuscoffeeshop-kitchen/quarkuscoffeeshop-kitchen-template.yaml  > argocd/quarkuscoffeeshop-kitchen/quarkuscoffeeshop-kitchen.yaml
+oc create -f argocd/quarkuscoffeeshop-kitchen/quarkuscoffeeshop-kitchen.yaml  -n openshift-gitops
+```
+
+**quarkuscoffeeshop-web argo application**   
+```
+sed "s|%REPO_NAME%|'${REPO_URL}'|g" argocd/quarkuscoffeeshop-web/quarkuscoffeeshop-web-template.yaml  > argocd/quarkuscoffeeshop-web/quarkuscoffeeshop-web.yaml
+oc create -f argocd/quarkuscoffeeshop-web/quarkuscoffeeshop-web.yaml  -n openshift-gitops
+```
+
+![20210918122954](https://i.imgur.com/RDN8MuA.png)
+
 
 ### To run pipelines go to the quarkuscoffeeshop-cicd project 
+![20210918123135](https://i.imgur.com/Xi5gFxx.png)
+
+**To start the build-and-push-quarkuscoffeeshop-barista pipeline**
+![20210918123445](https://i.imgur.com/4nrBVKx.png)
+![20210918123532](https://i.imgur.com/hntPWfb.png)
+
+**To start the build-and-push-quarkuscoffeeshop-counter pipeline**
+![20210918123622](https://i.imgur.com/31Bg10i.png)
+![20210918123709](https://i.imgur.com/qfn5puz.png)
+
+**To start the build-and-push-quarkuscoffeeshop-kitchen pipeline**
+
+**To start the build-and-push-quarkuscoffeeshop-web pipeline**
 
 ### Deployment Validation 

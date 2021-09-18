@@ -1,29 +1,13 @@
 ---
 layout: post
-title:  "quarkuscoffeeshop Tekton pipelines Guide"
-date:   2021-05-08 12:00:00 -0500
+title:  "homeoffice tekton pipelines Guide"
+date:   2021-09-16 12:00:00 -0500
 categories: devops
 ---
 
 # quarkuscoffeeshop homeoffice Tekton pipelines Guide
 
 ### Requirements 
-* [Postgres Operator](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-helm/wiki#install-postgres-operator)
-```
-$ curl -OL https://raw.githubusercontent.com/tosin2013/postgres-operator/main/scripts/deploy-postgres-operator.sh
-$ chmod +x deploy-postgres-operator.sh
-$ ./deploy-postgres-operator.sh 
-./deploy-postgres-operator.sh [OPTION]
- Options:
-  -d      Add domain 
-  -t      OpenShift Token
-  -u      Uninstall deployment
-  To deploy postgres-operator playbooks
-  ./deploy-postgres-operator.sh  -d ocp4.example.com -o sha-123456789 
-  To Delete postgres-operator playbooks from OpenShift
-  ./deploy-postgres-operator.sh  -d ocp4.example.com -o sha-123456789 -u true
-```
-
 **Once Postgres Operator Database is installed run the following below**
 ```
 $ cat >env.variables<<EOF

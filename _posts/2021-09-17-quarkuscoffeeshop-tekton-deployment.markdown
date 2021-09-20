@@ -193,7 +193,12 @@ oc create -f argocd/quarkuscoffeeshop-web/quarkuscoffeeshop-web.yaml  -n openshi
 ![20210918123709](https://i.imgur.com/qfn5puz.png)
 
 **To start the build-and-push-quarkuscoffeeshop-kitchen pipeline**
+![20210918131559](https://i.imgur.com/wxM1RMY.png)
+![20210918131650](https://i.imgur.com/AOrOIrQ.png)
 
 **To start the build-and-push-quarkuscoffeeshop-web pipeline**
+![20210918131734](https://i.imgur.com/CixJOul.png)
+![20210918131809](https://i.imgur.com/XglAdc5.png)
 
 ### Deployment Validation 
+WIP

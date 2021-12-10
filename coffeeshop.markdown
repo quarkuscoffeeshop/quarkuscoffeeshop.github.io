@@ -11,17 +11,17 @@ This application can be run locally by cloning the individual repositories or de
 _NOTE:_ Docker is required to run the demo locally
 
 To run the complete coffeeshop demo locally you will need to clone:
-* quarkuscoffeeshop-support
-* quarkuscoffeeshop-counter
-* quarkuscoffeeshop-barista
-* quarkuscoffeeshop-kitchen
-* quarkuscoffeeshop-web
+* [quarkuscoffeeshop-support](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support)
+* [quarkuscoffeeshop-counter](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-counter)
+* [quarkuscoffeeshop-barista](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-barista)
+* [quarkuscoffeeshop-kitchen](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-kitchen)
+* [quarkuscoffeeshop-web](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-web)
 
-quarkuscoffeeshop-support contains a Docker Compose file that will spin up Kafka and PostgreSQL.  This will need to be started before the microservices
+[quarkuscoffeeshop-support](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support) contains a Docker Compose file that will spin up Kafka and PostgreSQL.  This will need to be started before the microservices
 
 The microservices all require environment variables to be set
 
-quarkuscoffeeshop-counter
+[quarkuscoffeeshop-counter](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-counter)
 ```
 export KAFKA_BOOTSTRAP_URLS=localhost:9092 \
 PGSQL_URL="jdbc:postgresql://localhost:5432/coffeeshopdb?currentSchema=coffeeshop" \
@@ -29,12 +29,12 @@ PGSQL_USER="coffeeshopuser" \
 PGSQL_PASS="redhat-21"
 ```
 
-quarkuscoffeeshop-barista and quarkuscoffeeshop-kitchen
+[quarkuscoffeeshop-barista](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-barista) and [quarkuscoffeeshop-kitchen](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-kitchen)
 ```
 export KAFKA_BOOTSTRAP_URLS=localhost:9092 \
 ```
 
-quarkuscoffeeshop-web
+[quarkuscoffeeshop-web](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-web)
 ```
 export KAFKA_BOOTSTRAP_URLS=localhost:9092 \ 
 STREAM_URL=http://localhost:8080/dashboard/stream \

@@ -1,8 +1,10 @@
 ---
 layout: page
-title: CoffeeShop
+title: QuarkusCoffeeshop
 permalink: /coffeeshop/
 ---
+
+This application can be run locally by cloning the individual repositories or deployed to Kubernetes/OpenShift.
 
 The application consists of the following microservices,:
 

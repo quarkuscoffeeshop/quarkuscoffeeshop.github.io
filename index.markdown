@@ -9,11 +9,10 @@ title: Home
 <h1>Welcome to the Quarkus Coffeeshop!</h1>
 <p>This is the repository for several demos based around a Coffeeshop</p>
 <ul>
-<li>Quarkus Coffeeshop</li>
-<li>Home Office</li>
-<li>Debezium Outbox Pattern</li>
-<li>DevOps</li>
-<li>Hybrid Cloud Management</li>
+<li>Event Driven Microservices (QuarkusCoffeeshop)</li>
+<li>NodeJS and GraphQL (Home Office)</li>
+<li>DevOps (Tekton Pipelines and ArgoCD)</li>
+<li>Hybrid Cloud Management (Red Hat Advanced Cluster Manager)</li>
 </ul>
 <h2>Quarkus Coffeeshop</h2>
 <p>The Quarkus Coffeeshop is a collection of seven microservices that use Apache Kafka as their transport.<p>

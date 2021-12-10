@@ -24,50 +24,21 @@ $ ./get_helm.sh
 
 
 ### Install Postgres Operator
-
-**git clone postgres-operator**
 ```
-$ git clone https://github.com/tosin2013/postgres-operator.git
-$ cd postgres-operator/
+$ curl -OL https://raw.githubusercontent.com/tosin2013/postgres-operator/main/scripts/deploy-postgres-operator.sh
+$ chmod +x deploy-postgres-operator.sh
+$ ./deploy-postgres-operator.sh 
+./deploy-postgres-operator.sh [OPTION]
+ Options:
+  -d      Add domain 
+  -t      OpenShift Token
+  -u      Uninstall deployment
+  To deploy postgres-operator playbooks
+  ./deploy-postgres-operator.sh  -d ocp4.example.com -o sha-123456789 
+  To Delete postgres-operator playbooks from OpenShift
+  ./deploy-postgres-operator.sh  -d ocp4.example.com -o sha-123456789 -u true
 ```
 
-**Create inventory file**
-```
-$ export DOMAIN=ocp4.example.com
-$ export OCP_TOKEN=123456789
-$ cat >inventory.yaml<<YAML
----
-  all:
-    hosts:
-        localhost:
-    vars:
-        ansible_connection: local
-        config_path: "./values.yaml"
-        # ==================
-        # Installation Methods
-        # One of the following blocks must be updated:
-        # - Deploy into Kubernetes
-        # - Deploy into Openshift
-
-        # Deploy into Kubernetes
-        # ==================
-        # Note: Context name can be found using:
-        #   kubectl config current-context
-        # ==================
-        # kubernetes_context: ''
-
-        # Deploy into Openshift
-        # ==================
-        # Note: openshift_host can use the format https://URL:PORT
-        # Note: openshift_token can be used for token authentication
-        # ==================
-        openshift_host: 'https://api.${DOMAIN}:6443'
-        openshift_skip_tls_verify: true
-        # openshift_user: ''
-        # openshift_password: ''
-        openshift_token: '${OCP_TOKEN}'
-YAML
-```
 
 **Update project for Dev Teams**  
 `For devteam1`

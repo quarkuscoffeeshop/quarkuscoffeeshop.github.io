@@ -12,6 +12,14 @@ The application consists of the following microservices,:
 * **Kitchen** - makes food - https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-kitchen
 * **Inventory** - stores and restocks the inventory for the Barista and Kitchen microservices - https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-inventory
 
+The current versions are:
+
+* Web 
+* Counter 5.1.1
+* Barista  5.1.0
+* Kitchen 5.1.0
+* Inventory
+
 Supporting files can be found in the quarkuscoffeeshop-support project: https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support 
 
 ## [quarkuscoffeeshop-counter](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-counter)

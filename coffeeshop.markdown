@@ -52,7 +52,9 @@ Once the environment variables are set the services can be started with:
 
 The application can be deployed to OpenShift with Ansible.  Please see  <a class="page-link" href="/devops/">DevOps</a> for instructions.
 
-The application consists of the following microservices,:
+# Overview
+
+This demo models an individual coffeeshop and contains a web frontend where users can order drinks and food.  The application consists of the following microservices:
 
 * **Web** - the web front end (no way you saw that coming)
 * **Counter** - coordinates events in the system - https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-counter

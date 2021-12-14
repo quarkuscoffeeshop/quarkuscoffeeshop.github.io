@@ -4,11 +4,20 @@ title: QuarkusCoffeeshop
 permalink: /coffeeshop/
 ---
 
-This application can be run locally by cloning the individual repositories or deployed to Kubernetes/OpenShift.
+This application can be run locally or deployed to Kubernetes/OpenShift.
+
+Running the demo locally requires Docker and Java
 
 # Running Locally
 
-_NOTE:_ Docker is required to run the demo locally
+_NOTE:_ Docker and Java are required to run the demo locally
+
+The below links opens in a new window/tab
+
+* Docker can be downloaded from <a href="https://www.docker.com/" target="_blank">docker.com</a>
+* Java can be downloaded from several places.  Your authors recommend <a href="https://adoptopenjdk.net/" target="_blank">AdoptOpenJDK</a>
+
+## Step 1: Clone the Repositories
 
 To run the complete coffeeshop demo locally you will need to clone:
 * [quarkuscoffeeshop-support](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support)
@@ -17,7 +26,11 @@ To run the complete coffeeshop demo locally you will need to clone:
 * [quarkuscoffeeshop-kitchen](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-kitchen)
 * [quarkuscoffeeshop-web](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-web)
 
+## Step 2: Fire up Kafka and PostgreSQL (with Docker Compose)
+
 [quarkuscoffeeshop-support](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support) contains a Docker Compose file that will spin up Kafka and PostgreSQL.  This will need to be started before the microservices
+
+## Step 3: Set the Environment Variables
 
 The microservices all require environment variables to be set
 
@@ -41,6 +54,7 @@ STREAM_URL=http://localhost:8080/dashboard/stream \
 CORS_ORIGINS=http://localhost:8080 \
 STORE_ID=CHARLOTTE
 ```
+## Step 4: Start the Microservices
 
 Once the environment variables are set the services can be started with:
 ```
@@ -52,39 +66,31 @@ Once the environment variables are set the services can be started with:
 
 The application can be deployed to OpenShift with Ansible.  Please see  <a class="page-link" href="/devops/">DevOps</a> for instructions.
 
+There is no need to build the microservices locally to run them in OpenShift because they are already deployed to <a href="https://quay.io/organization/quarkuscoffeeshop" target="_blank" >Red Hat Quay</a>. 
+
 # Overview
 
 This demo models an individual coffeeshop and contains a web frontend where users can order drinks and food.  The application consists of the following microservices:
 
-* **Web** - the web front end (no way you saw that coming)
-* **Counter** - coordinates events in the system - https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-counter
-* **Barista** - makes drinks - https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-barista
-* **Kitchen** - makes food - https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-kitchen
-* **Inventory** - stores and restocks the inventory for the Barista and Kitchen microservices - https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-inventory
+### [quarkuscoffeeshop-web](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-web)
 
-The current versions are:
+The web front end (no way you saw that coming.) This service hosts the web front end and is the initial entry point for all orders. Orders are sent to a Kafka topic, where they are picked up by the Counter service
 
-* Web 
-* Counter 5.1.1
-* Barista  5.1.0
-* Kitchen 5.1.0
-* Inventory
+The web service listens to another Kafka topic for updates to orders and then streams the updates to the html page using server sent events  
+[quarkuscoffeeshop-web]({% post_url 2021-05-13-quarkuscoffeeshop-web %})
+
+## [quar#kuscoffeeshop-counter](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-counter)
+
+## [quarkuscoffeeshop-barista]({% post_url 2021-05-13-quarkuscoffeeshop-barista %})
+The barista services consumes "OrderIn" events, applies the business logic for making the beverage, and produces, "OrderUp" events. The terms "OrderIn" and "OrderUp" are part of our ubiquitous language  
+
+
 
 Supporting files can be found in the quarkuscoffeeshop-support project: https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support 
 
-## [quarkuscoffeeshop-counter](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-counter)
->This service orchestrates and persists order related events  
-[Quarkus Coffeeshop Counter Microservice]({% post_url 2021-05-13-quarkuscoffeeshop-counter %})
-
-## quarkuscoffeeshop-web
-> This service hosts the web front end and is the initial entry point for all orders. Orders are sent to a Kafka topic, where they are picked up by the Counter service
-This services listens to another Kafka topic for updates and streams updates to the html page with server sent events  
-[quarkuscoffeeshop-web]({% post_url 2021-05-13-quarkuscoffeeshop-web %})
 
 
-## quarkuscoffeeshop-barista project
->The barista services consumes "OrderIn" events, applies the business logic for making the beverage, and produces, "OrderUp" events. The terms "OrderIn" and "OrderUp" are part of our ubiquitous language  
-[quarkuscoffeeshop-barista]({% post_url 2021-05-13-quarkuscoffeeshop-barista %})
+
 
 
 ## Kitchen Microservice

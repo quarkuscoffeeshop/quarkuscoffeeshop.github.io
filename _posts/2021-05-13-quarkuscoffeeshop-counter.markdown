@@ -7,7 +7,32 @@ categories: coffeeshop
 
 # quarkuscoffeeshop-counter
 
-This microservices orchestrates the incoming and outgoing orders.  In a physical cafe the counter orchestrates the incoming orders.  So following Domain Driven Design's [ubiquitous language](https://martinfowler.com/bliki/UbiquitousLanguage.html) practice this microservice is named "counter." 
+## Running
+
+Docker and a JDK are required to run locally
+
+[quarkuscoffeeshop-support](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support) contains a Docker Compose file that will spin up Kafka and PostgreSQL.  This will need to be started before the microservices
+
+```
+git clone https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support
+cd quarkuscoffeeshop-support
+docker compose up
+```
+
+[quarkuscoffeeshop-counter](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-counter) requires 4 environment variables to be set and can then Quarkus can be started in dev mode
+
+```
+export KAFKA_BOOTSTRAP_URLS=localhost:9092 \
+PGSQL_URL="jdbc:postgresql://localhost:5432/coffeeshopdb?currentSchema=coffeeshop" \
+PGSQL_USER="coffeeshopuser" \
+PGSQL_PASS="redhat-21"
+
+./mvnw clean compile quarkus:dev
+```
+
+## About
+
+This microservices orchestrates the incoming and outgoing orders, persists orders in a database, and saves domain events in a database.  In a physical cafe the counter orchestrates the incoming orders.  So following Domain Driven Design's [ubiquitous language](https://martinfowler.com/bliki/UbiquitousLanguage.html) practice this microservice is named "counter." 
 
 ## Code
 The package structure reflects Domain Driven Design principles and is organized using DDD principles with 2 primary packages, "domain" and "infrastructure."  The "domain" package contains sub-packages for "commands," "events," and "valueobjects."

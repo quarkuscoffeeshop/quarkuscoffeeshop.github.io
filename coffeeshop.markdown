@@ -14,10 +14,13 @@ Running the demo locally requires Docker and Java
 
 _NOTE:_ Docker and Java are required to run the demo locally
 
-The below links opens in a new window/tab
-
 * Docker can be downloaded from <a href="https://www.docker.com/" target="_blank">docker.com</a>
 * Java can be downloaded from several places.  Your authors recommend <a href="https://adoptopenjdk.net/" target="_blank">AdoptOpenJDK</a>
+
+To run locally:
+* clone the appropriate repos
+* start PostgreSQL and Kafka, both of which are required
+* start the microserives
 
 ## Step 1: Clone the Repositories
 
@@ -28,9 +31,21 @@ To run the complete coffeeshop demo locally you will need to clone:
 * [quarkuscoffeeshop-kitchen](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-kitchen)
 * [quarkuscoffeeshop-web](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-web)
 
+```shell
+git clone https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support.git
+git clone https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-counter.git
+git clone https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-barista.git
+git clone https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-kitchen.git
+git clone https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-web.git
+```
+
 ## Step 2: Fire up Kafka and PostgreSQL (with Docker Compose)
 
 [quarkuscoffeeshop-support](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support) contains a Docker Compose file that will spin up Kafka and PostgreSQL.  This will need to be started before the microservices
+
+```shell
+docker compose up
+```
 
 ## Step 3: Set the Environment Variables
 
@@ -60,9 +75,10 @@ STORE_ID=CHARLOTTE
 
 Once the environment variables are set the services can be started with:
 ```
-
 ./mvnw clean compile quarkus:dev
 ```
+
+You should be up and running!
 
 # Running in OpenShift
 
@@ -70,44 +86,40 @@ The application can be deployed to OpenShift with Ansible.  Please see  <a class
 
 There is no need to build the microservices locally to run them in OpenShift because they are already deployed to <a href="https://quay.io/organization/quarkuscoffeeshop" target="_blank" >Red Hat Quay</a>. 
 
-# Overview
+# What's in the Demo
 
-This demo models an individual coffeeshop and contains a web frontend where users can order drinks and food.  The application consists of the following microservices:
+This demo models an individual coffeeshop where users can order drinks and food and view the status of their order.
 
-### [quarkuscoffeeshop-web](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-web)
+The demo illustrates the general concepts of Event Driven Architecture, Domain Driven Design, and Event Sourcing.  The demo also specifically illustrates using Kafka with Quarkus and Debezium with Quarkus.
 
-The web front end (no way you saw that coming.) This service hosts the web front end and is the initial entry point for all orders. Orders are sent to a Kafka topic, where they are picked up by the Counter service
+If you are running locally:
+1.  Open <a href="http://localhost:8080" target="_blank" >http://localhost:8080</a>
+2.  Choose a beverage and/or baked goods
+3.  Watch as your order status is updated
 
-The web service listens to another Kafka topic for updates to orders and then streams the updates to the html page using server sent events  
-[quarkuscoffeeshop-web]({% post_url 2021-05-13-quarkuscoffeeshop-web %})
+## What happens behind the scenes
 
-## [quar#kuscoffeeshop-counter](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-counter)
+### Web Microservice
 
-## [quarkuscoffeeshop-barista]({% post_url 2021-05-13-quarkuscoffeeshop-barista %})
-The barista services consumes "OrderIn" events, applies the business logic for making the beverage, and produces, "OrderUp" events. The terms "OrderIn" and "OrderUp" are part of our ubiquitous language  
+1. The web page posts your order as JSON to a REST endpoint
+2. The REST endpoint creates a PlaceOrderCommand object and sends that object in JSON format to a Kafka topic named "orders-in"
+3. The application listens to a Kafka topic, "web-updates," and when a message is received it is marshalled into JSON and sent to the web front end using server sent events
+
+### Counter Microservice
+
+1.  The counter microservice listens on the Kafka topic, "orders-in," and receives the order from the web
+2.  The counter microservice creates value objects for the barista and kitchen microservices and sends them to the approrpriate Kafka topics
+3.  The counter microservice persists the Order to the PostgreSQL database
+4.  The counter microservice persists an OrderCreatedEvent 
+4.  The counter microservice listes on the "orders-up" topic, and receives messages from the barista and kitchen microservices
+5.  The counter microservices updates and persists the Order
+6.  The counter microservice creates and persists an OrderUpdatedEvent and OrderCompletedEvent (when all of the orders' line items are fulfilled)
+7.  The counter microservice creates a web update value object and places it on the "web-updates" Kafka topic
+
+### Barista and Kitchen Microservices
+
+1.  The barista and kitchen microservices listen to the "barista-in" and "kitchen-in" Kafka topics
+2.  When an order comes in they apply the logic for making an order
+3.  When the order is ready they send an update to the "orders-up" Kafka topic
 
 
-
-Supporting files can be found in the quarkuscoffeeshop-support project: https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support 
-
-
-
-
-
-
-## Kitchen Microservice
->The kitchen services consumes "OrderIn" events, applies the business logic for making the item, and produces, "OrderUp" events. The terms "OrderIn" and "OrderUp" are part of our ubiquitous language  
-[Kitchen Microservice]({% post_url 2021-05-13-quarkuscoffeeshop-kitchen %})
-
-## quarkuscoffesshop-inventory project
-[quarkuscoffeeshop-inventory]({% post_url 2021-05-13-quarkuscoffeeshop-inventory %})
-
-## quarkuscoffeeshop-customermocker project
-[quarkuscoffeeshop-customermocker]({% post_url 2021-05-13-quarkuscoffeeshop-customermocker %})
-
-## customerloyalty project
-[quarkuscoffeeshop-customerloyalty]({% post_url 2021-05-13-customerloyalty %})
-
-## Quarkuscoffeeshop Support
->This repo contains support files for local development  
-[Quarkuscoffeeshop Support](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support)

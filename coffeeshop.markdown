@@ -19,7 +19,7 @@ _NOTE:_ Docker and Java are required to run the demo locally
 
 To run locally:
 * clone the appropriate repos
-* start PostgreSQL and Kafka, both of which are required
+* run Docker Compose which will start PostgreSQL and Kafka, both of which are required by the application and PGAdmin which can be used to view the database contents
 * start the microserives
 
 ## Step 1: Clone the Repositories

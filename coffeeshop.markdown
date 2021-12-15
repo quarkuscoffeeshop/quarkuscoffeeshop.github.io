@@ -43,6 +43,8 @@ git clone https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-web.git
 
 [quarkuscoffeeshop-support](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-support) contains a Docker Compose file that will spin up Kafka and PostgreSQL.  This will need to be started before the microservices
 
+From inside the quarkuscoffeeshop-support directory run:
+
 ```shell
 docker compose up
 ```

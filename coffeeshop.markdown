@@ -80,6 +80,17 @@ Once the environment variables are set the services can be started with:
 ./mvnw clean compile quarkus:dev
 ```
 
+This command will have to be run from within each directory.
+
+_NOTE_: If you want to step debug through the code you will need to tell each service to listen on a different port.  Since 5005 is the default you will have to increment this number for each service:
+
+```shell
+./mvnw clean compile quarkus:dev -Ddebug=5006
+```
+```shell
+./mvnw clean compile quarkus:dev -Ddebug=5007
+```
+
 You should be up and running!
 
 # Running in OpenShift

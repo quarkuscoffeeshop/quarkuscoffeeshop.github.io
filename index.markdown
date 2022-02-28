@@ -21,7 +21,7 @@ title: Home
 <ul>
 <li>Event Driven Architecture</li>
 <li>Domain Driven Design</li>
-<li>Developing applicaitons with Quarkus, the Supersonic, Subatomic Java runtime</li>
+<li>Developing applications with Quarkus, the Supersonic, Subatomic Java runtime</li>
 <li>Kafka (or AMQ Streams in Red Hat terminology)</li>
 </ul>
 </p>

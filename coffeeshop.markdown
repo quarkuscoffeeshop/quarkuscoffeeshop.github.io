@@ -20,7 +20,7 @@ _NOTE:_ Docker and Java are required to run the demo locally
 To run locally:
 * clone the appropriate repos
 * run Docker Compose which will start PostgreSQL and Kafka, both of which are required by the application and PGAdmin which can be used to view the database contents
-* start the microserives
+* start the microservices
 
 ## Step 1: Clone the Repositories
 
@@ -121,10 +121,10 @@ If you are running locally:
 ### Counter Microservice
 
 1.  The counter microservice listens on the Kafka topic, "orders-in," and receives the order from the web
-2.  The counter microservice creates value objects for the barista and kitchen microservices and sends them to the approrpriate Kafka topics
+2.  The counter microservice creates value objects for the barista and kitchen microservices and sends them to the appropriate Kafka topics
 3.  The counter microservice persists the Order to the PostgreSQL database
 4.  The counter microservice persists an OrderCreatedEvent 
-4.  The counter microservice listes on the "orders-up" topic, and receives messages from the barista and kitchen microservices
+4.  The counter microservice lists on the "orders-up" topic, and receives messages from the barista and kitchen microservices
 5.  The counter microservices updates and persists the Order
 6.  The counter microservice creates and persists an OrderUpdatedEvent and OrderCompletedEvent (when all of the orders' line items are fulfilled)
 7.  The counter microservice creates a web update value object and places it on the "web-updates" Kafka topic

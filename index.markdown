@@ -7,7 +7,7 @@ title: Home
 ---
 <h1>Welcome to the Quarkus Coffeeshop</h1>
 
-![QuarkusCoffeeshop Homepage](/_assets/quarkuscoffeeshop-homepage.png)
+![QuarkusCoffeeshop Homepage](https://raw.githubusercontent.com/quarkuscoffeeshop/quarkuscoffeeshop-ansible/master/images/webpage-example.png)
 
 <p>This is the repository for several demos based around a Coffeeshop and can be used to showcase:
 <ul>

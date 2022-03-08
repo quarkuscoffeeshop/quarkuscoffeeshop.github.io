@@ -4,13 +4,14 @@ title: QuarkusCoffeeshop
 permalink: /coffeeshop/
 ---
 
+# Overview
+
 # Basics
 
 This application can be run locally or deployed to Kubernetes/OpenShift.
-
 Running the demo locally requires Docker and Java
 
-# Running Locally
+# Running Locally (on your laptop)
 
 _NOTE:_ Docker and Java are required to run the demo locally
 

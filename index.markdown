@@ -5,19 +5,30 @@
 layout: default
 title: Home
 ---
+<h1>Welcome to the Quarkus Coffeeshop</h1>
 
-<h1>Welcome to the Quarkus Coffeeshop!</h1>
-<p>This is the repository for several demos based around a Coffeeshop</p>
-<p>Instructions for building and running can be found on the pages for the individual demos:</p>
+![QuarkusCoffeeshop Homepage](_assets/quarkuscoffeeshop-homepage.png)
+
+
+<p>This is the repository for several demos based around a Coffeeshop and can be used to showcase:
 <ul>
-<li><a class="page-link" href="/coffeeshop/">Coffeeshop</a></li>
-<li><a class="page-link" href="/homeoffice/">Homeoffice</a></li>
-<li><a class="page-link" href="/devops/">DevOps</a></li>
-<li><a class="page-link" href="/management/">Hybrid Cloud Management</a></li>
+<li>Event Driven Architecture</li>
+<li>Event Streaming</li>
+<li>Domain Driven Design and Event Storming</li>
+<li>Change Data Capture</li>
+<li>Quarkus</li>
+<li>OpenShift (Kubernetes)</li>
+<li>Ansible</li>
+<li>GitOps</li>
 </ul>
+</p>
 
-<h2>Quarkus Coffeeshop</h2>
-<p>The QuarkusCoffeeshop demo is a microservices application that illustrates:<p>
+<p>The repository contains 9 microservices, a monolithic version of the coffeeshop application, supporting files for running locally, and configuration for deploying to OpenShift</p>
+
+<p>Instructions for building and running the microservices can be found on the pages for the individual demos</p>
+
+<h2><a class="page-link" href="/coffeeshop/">QuarkusCoffeeshop</a></h2>
+<p>The QuarkusCoffeeshop consists of 7 microservices and can be used to demonstrate:
 <ul>
 <li>Event Driven Architecture</li>
 <li>Domain Driven Design</li>
@@ -25,9 +36,23 @@ title: Home
 <li>Kafka (or AMQ Streams in Red Hat terminology)</li>
 </ul>
 </p>
-<h2>Home Office</h2>
-<p>The HomeOffice demo illustrates:</p>
+
+<h2><a class="page-link" href="/homeoffice/">HomeOffice</a></h2>
+<p>The backoffice can be used to demonstrate:
 <ul>
 <li>GraphQL</li>
 <li>Red Hat's Patternfly library for ReactJS</li>
 </ul>
+</p>
+<p>Supporting projects can be used to illustrate:
+<ul>
+<li>Ansible</li>
+<li>Helm</li>
+<li>GitOps</li>
+<li>OpenShift</li>
+</ul>
+</p>
+
+<h2><a class="page-link" href="/devops/">DevOps</a></h2>
+
+<h2><a class="page-link" href="/management/">Hybrid Cloud Management</a></h2>

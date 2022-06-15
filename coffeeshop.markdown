@@ -50,31 +50,7 @@ From inside the quarkuscoffeeshop-support directory run:
 docker compose up
 ```
 
-## Step 3: Set the Environment Variables
-
-The microservices all require environment variables to be set
-
-[quarkuscoffeeshop-counter](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-counter)
-```
-export KAFKA_BOOTSTRAP_URLS=localhost:9092 \
-PGSQL_URL="jdbc:postgresql://localhost:5432/coffeeshopdb?currentSchema=coffeeshop" \
-PGSQL_USER="coffeeshopuser" \
-PGSQL_PASS="redhat-21"
-```
-
-[quarkuscoffeeshop-barista](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-barista) and [quarkuscoffeeshop-kitchen](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-kitchen)
-```
-export KAFKA_BOOTSTRAP_URLS=localhost:9092 \
-```
-
-[quarkuscoffeeshop-web](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-web)
-```
-export KAFKA_BOOTSTRAP_URLS=localhost:9092 \ 
-STREAM_URL=http://localhost:8080/dashboard/stream \
-CORS_ORIGINS=http://localhost:8080 \
-STORE_ID=CHARLOTTE
-```
-## Step 4: Start the Microservices
+## Step 3: Start the Microservices
 
 Once the environment variables are set the services can be started with:
 ```

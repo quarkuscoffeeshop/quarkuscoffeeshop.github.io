@@ -25,39 +25,19 @@ $ sudo mv kustomize /usr/local/bin/
 
 ## Administrator Tasks On Target Cluster (OCP4 ACM Managed)
 
-
-### Run Ansible playbook to install AMQ and Postgres on target clusters.
-
-#### Install Postgres Operator
-[install-postgres-operator](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-helm/wiki#install-postgres-operator)
-```
-$ curl -OL https://raw.githubusercontent.com/tosin2013/postgres-operator/main/scripts/deploy-postgres-operator.sh
-$ chmod +x deploy-postgres-operator.sh
-$ ./deploy-postgres-operator.sh 
-./deploy-postgres-operator.sh [OPTION]
- Options:
-  -d      Add domain 
-  -t      OpenShift Token
-  -u      Uninstall deployment
-  To deploy postgres-operator playbooks
-  ./deploy-postgres-operator.sh  -d ocp4.example.com -o sha-123456789 
-  To Delete postgres-operator playbooks from OpenShift
-  ./deploy-postgres-operator.sh  -d ocp4.example.com -o sha-123456789 -u true
-```
-
 #### Install Amq Streams and Configure Postgres DB on each cluster
+https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-ansible/blob/master/README.md
 ```
-$ curl -OL https://raw.githubusercontent.com/quarkuscoffeeshop/quarkuscoffeeshop-ansible/dev/files/deploy-quarkuscoffeeshop-ansible.sh
-$ chmod +x deploy-quarkuscoffeeshop-ansible.sh
-$ cat >env.variables<<EOF
+$ cat >source.env<<EOF
+CLUSERTER_DOMAIN_NAME=clustername.example.com
+TOKEN=sha256~XXXXXXXXXXXX
 ACM_WORKLOADS=n
 AMQ_STREAMS=y
 CONFIGURE_POSTGRES=y
-MONGODB_OPERATOR=n
-MONGODB=n
 HELM_DEPLOYMENT=n
+DELETE_DEPLOYMENT=false
 EOF
-$ ./deploy-quarkuscoffeeshop-ansible.sh -d ocp4.example.com -t sha-123456789 -p 123456789 -s ATLANTA
+$ podman run  -it --env-file=./source.env  quay.io/quarkuscoffeeshop/quarkuscoffeeshop-ansible:v4.10.24
 
 ```
 

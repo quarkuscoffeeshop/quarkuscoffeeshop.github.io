@@ -8,23 +8,7 @@ categories: management
 # quarkuscoffeeshop Tekton pipelines Guide
 
 ### Requirements 
-* [Postgres Operator](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-helm/wiki#install-postgres-operator)
-```
-$ curl -OL https://raw.githubusercontent.com/tosin2013/postgres-operator/main/scripts/deploy-postgres-operator.sh
-$ chmod +x deploy-postgres-operator.sh
-$ ./deploy-postgres-operator.sh 
-./deploy-postgres-operator.sh [OPTION]
- Options:
-  -d      Add domain 
-  -t      OpenShift Token
-  -u      Uninstall deployment
-  To deploy postgres-operator playbooks
-  ./deploy-postgres-operator.sh  -d ocp4.example.com -o sha-123456789 
-  To Delete postgres-operator playbooks from OpenShift
-  ./deploy-postgres-operator.sh  -d ocp4.example.com -o sha-123456789 -u true
-```
-
-**Once Postgres Operator Database is installed run the following below**
+**Run the command below **
 ```
 $ cat >env.variables<<EOF
 ACM_WORKLOADS=y

@@ -7,34 +7,20 @@ categories: devops
 
 # quarkuscoffeeshop Tekton pipelines Guide
 
-### Requirements 
-* [Postgres Operator](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-helm/wiki#install-postgres-operator)
-```
-$ curl -OL https://raw.githubusercontent.com/tosin2013/postgres-operator/main/scripts/deploy-postgres-operator.sh
-$ chmod +x deploy-postgres-operator.sh
-$ ./deploy-postgres-operator.sh 
-./deploy-postgres-operator.sh [OPTION]
- Options:
-  -d      Add domain 
-  -t      OpenShift Token
-  -u      Uninstall deployment
-  To deploy postgres-operator playbooks
-  ./deploy-postgres-operator.sh  -d ocp4.example.com -o sha-123456789 
-  To Delete postgres-operator playbooks from OpenShift
-  ./deploy-postgres-operator.sh  -d ocp4.example.com -o sha-123456789 -u true
-```
-
 **Once Postgres Operator Database is installed run the following below**
 ```
-$ cat >env.variables<<EOF
+$ cat >source.env<<EOF
+CLUSERTER_DOMAIN_NAME=clustername.example.com
+TOKEN=sha256~XXXXXXXXXXXX
 ACM_WORKLOADS=y
 AMQ_STREAMS=y
 CONFIGURE_POSTGRES=y
 MONGODB_OPERATOR=n
 MONGODB=n
 HELM_DEPLOYMENT=n
+DELETE_DEPLOYMENT=false
 EOF
-$ ./deploy-quarkuscoffeeshop-ansible.sh -d ocp4.example.com -t sha-123456789 -p 123456789 -s ATLANTA
+$ podman run  -it --env-file=./source.env  quay.io/quarkuscoffeeshop/quarkuscoffeeshop-ansible:v4.10.24
 ```
 
 **Install tkn cli**  

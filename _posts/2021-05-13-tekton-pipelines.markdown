@@ -8,17 +8,20 @@ categories: management
 # quarkuscoffeeshop Tekton pipelines Guide
 
 ### Requirements 
-**Run the command below **
+**Run the command below**
 ```
-$ cat >env.variables<<EOF
+$ cat >source.env<<EOF
+CLUSERTER_DOMAIN_NAME=clustername.example.com
+TOKEN=sha256~XXXXXXXXXXXX
 ACM_WORKLOADS=y
 AMQ_STREAMS=y
 CONFIGURE_POSTGRES=n
 MONGODB_OPERATOR=n
 MONGODB=n
 HELM_DEPLOYMENT=n
+DELETE_DEPLOYMENT=false
 EOF
-$ ./deploy-quarkuscoffeeshop-ansible.sh -d ocp4.example.com -t sha-123456789 -p 123456789 -s ATLANTA
+$ podman run  -it --env-file=./source.env  quay.io/quarkuscoffeeshop/quarkuscoffeeshop-ansible:v4.10.24
 ```
 
 **Install tkn cli**  
